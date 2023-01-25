@@ -7,4 +7,6 @@ export declare class AppController {
     createFile(name: string): Promise<any>;
     updateFile(id: string, name: string, token: string): Promise<any>;
     getbyid(id: string): Promise<any>;
+    getdeltoken(symbol: string): Promise<void>;
+    getdelid(id: string): Promise<void>;
 }

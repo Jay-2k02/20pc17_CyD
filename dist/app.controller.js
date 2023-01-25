@@ -36,6 +36,12 @@ let AppController = class AppController {
     async getbyid(id) {
         return this.appService.getbyid(id);
     }
+    async getdeltoken(symbol) {
+        return this.appService.delbysymbol(symbol);
+    }
+    async getdelid(id) {
+        return this.appService.delbyid(id);
+    }
 };
 __decorate([
     (0, common_1.Get)('/'),
@@ -72,6 +78,20 @@ __decorate([
     __metadata("design:paramtypes", [String]),
     __metadata("design:returntype", Promise)
 ], AppController.prototype, "getbyid", null);
+__decorate([
+    (0, common_1.Get)('getdelsymbol'),
+    __param(0, (0, decorators_1.Body)('symbol')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getdeltoken", null);
+__decorate([
+    (0, common_1.Get)('getdelid'),
+    __param(0, (0, decorators_1.Body)('id')),
+    __metadata("design:type", Function),
+    __metadata("design:paramtypes", [String]),
+    __metadata("design:returntype", Promise)
+], AppController.prototype, "getdelid", null);
 AppController = __decorate([
     (0, common_1.Controller)(),
     __metadata("design:paramtypes", [app_service_1.AppService])

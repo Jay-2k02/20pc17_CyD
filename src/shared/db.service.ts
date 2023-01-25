@@ -20,9 +20,11 @@ export class DbService {
   }
 
   async find(key: string) {
+    console.log (key);
     const reqWList = this.WatchLists.find((obj: any) => {
-      obj.name === key;
+      obj._id == key
     });
+    console.log (reqWList);
     return reqWList;
   }
 
@@ -71,5 +73,23 @@ export class DbService {
     }).save(); 
     return resul;
 
+  }
+
+  async delbysym (symbol: string)
+  {
+    const delelement = this.WatchLists.find((obj: any) => {
+      obj.symbol == symbol;
+    });
+
+    this.WatchLists.splice (delelement);
+  }
+
+  async delbyid (id: string)
+  {
+    const delelement = this.WatchLists.find((obj: any) => {
+      obj._id == id;
+    });
+
+    this.WatchLists.splice (delelement);
   }
 }

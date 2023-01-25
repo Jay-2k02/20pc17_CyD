@@ -23,9 +23,11 @@ let DbService = class DbService {
         });
     }
     async find(key) {
+        console.log(key);
         const reqWList = this.WatchLists.find((obj) => {
-            obj.name === key;
+            obj._id == key;
         });
+        console.log(reqWList);
         return reqWList;
     }
     async readAll() {
@@ -54,6 +56,18 @@ let DbService = class DbService {
         const resul = this.WatchLists.update({ tokens: reqWList
         }).save();
         return resul;
+    }
+    async delbysym(symbol) {
+        const delelement = this.WatchLists.find((obj) => {
+            obj.symbol == symbol;
+        });
+        this.WatchLists.splice(delelement);
+    }
+    async delbyid(id) {
+        const delelement = this.WatchLists.find((obj) => {
+            obj._id == id;
+        });
+        this.WatchLists.splice(delelement);
     }
 };
 DbService = __decorate([

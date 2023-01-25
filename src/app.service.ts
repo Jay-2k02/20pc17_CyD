@@ -33,4 +33,16 @@ export class AppService {
     const usersbyid = await this.db.find(id);
     return usersbyid;
   }
+
+  async delbysymbol (symbol: string)
+  {
+    const userdeleted = await this.db.delbysym(symbol);
+    return userdeleted;
+  }
+
+  async delbyid (id: string)
+  {
+    const userdeleted = await this.db.delbyid(id);
+    return userdeleted;
+  }
 }

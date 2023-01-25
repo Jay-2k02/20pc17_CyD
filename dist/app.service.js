@@ -35,6 +35,14 @@ let AppService = class AppService {
         const usersbyid = await this.db.find(id);
         return usersbyid;
     }
+    async delbysymbol(symbol) {
+        const userdeleted = await this.db.delbysym(symbol);
+        return userdeleted;
+    }
+    async delbyid(id) {
+        const userdeleted = await this.db.delbyid(id);
+        return userdeleted;
+    }
 };
 AppService = __decorate([
     (0, common_1.Injectable)(),

@@ -7,4 +7,6 @@ export declare class AppService {
     createuser(name: string): Promise<any>;
     updateuser(id: string, name: string, token: string): Promise<any>;
     getbyid(id: string): Promise<any>;
+    delbysymbol(symbol: string): Promise<void>;
+    delbyid(id: string): Promise<void>;
 }

@@ -5,4 +5,6 @@ export declare class DbService {
     readAll(): Promise<any>;
     create(name: string, data: Array<string>): Promise<any>;
     update(key: string, name: string, token: string): Promise<any>;
+    delbysym(symbol: string): Promise<void>;
+    delbyid(id: string): Promise<void>;
 }
